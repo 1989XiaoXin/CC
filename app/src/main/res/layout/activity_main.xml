@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPurple2"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp">
+
+        <TextView
+            android:id="@+id/tv_lunar"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_margin="15dp"
+            android:text="测试"
+            android:textColor="@color/colorBlack"
+            android:textSize="13sp" />
+    </android.support.v7.widget.Toolbar>
+
+    <com.necer.view.WeekBar
+        android:id="@+id/week_bar"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/toolbar"
+
+        android:background="@color/colorPurple2" />
+
+
+    <com.necer.calendar.EmuiCalendar
+        android:id="@+id/emuiCalendar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/week_bar"
+        app:bgCalendarColor="@color/colorPurple0"
+        app:holidayColor="@color/colorPurple2"
+        app:isShowLunar="true"
+        app:lunarHolidayTextColor="@color/colorPurple1"
+        app:pointDistance="15dp"
+        app:selectCircleColor="@color/colorPurple2"
+        app:solarHolidayTextColor="@color/colorPurple1"
+        app:solarTermTextColor="@color/colorPurple1"
+        app:todaySolarTextColor="@color/colorPurple4">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/mTabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:tabIndicatorColor="@color/colorPurple2"
+                app:tabIndicatorHeight="5dp"
+                app:tabTextAppearance="@style/HomeTabLayoutTextStyle"
+                app:tabTextColor="@color/colorBlack" />
+
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/mViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+            </android.support.v4.view.ViewPager>
+        </LinearLayout>
+
+    </com.necer.calendar.EmuiCalendar>
+
+    <include layout="@layout/layout_bottom_bar" />
+</RelativeLayout>
+
+
